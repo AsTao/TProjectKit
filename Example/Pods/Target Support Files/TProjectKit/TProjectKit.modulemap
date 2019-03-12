@@ -1,0 +1,6 @@
+framework module TProjectKit {
+  umbrella header "TProjectKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

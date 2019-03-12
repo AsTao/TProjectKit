@@ -1,0 +1,22 @@
+{
+  "name": "TProjectKit",
+  "version": "0.1.0",
+  "summary": "A short description of TProjectKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/EasyfunDev/TProjectKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "EasyfunDev": "236048180@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/EasyfunDev/TProjectKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TProjectKit/Classes/**/*"
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TProjectKit_Example' do
+  pod 'TProjectKit', :path => '../'
+
+  target 'TProjectKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
