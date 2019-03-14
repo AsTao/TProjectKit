@@ -21,22 +21,19 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/EasyfunDev/TProjectKit'
+  s.homepage         = 'https://github.com/AsTao/TProjectKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'EasyfunDev' => '236048180@qq.com' }
-  s.source           = { :git => 'https://github.com/EasyfunDev/TProjectKit.git', :tag => s.version.to_s }
+  s.author           = { 'SsTaoz' => '236048180@qq.com' }
+  s.source           = { :git => 'https://github.com/AsTao/TProjectKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
+  s.resources = 'TProjectKit/Assets/SwiftResource.bundle'
+  s.source_files = 'TProjectKit/Common/*','TProjectKit/Extentions/*','TProjectKit/Base/*'
+ 
+  s.frameworks = 'UIKit', 'Foundation' , 'CoreGraphics'
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  s.swift_version = '4.2'
 
-  s.source_files = 'TProjectKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'TProjectKit' => ['TProjectKit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

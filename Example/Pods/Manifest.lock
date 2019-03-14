@@ -1,5 +1,5 @@
 PODS:
-  - TProjectKit (0.1.0)
+  - TProjectKit (0.0.1)
 
 DEPENDENCIES:
   - TProjectKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TProjectKit: 0e5313bde37e6ce628d582f39f964313a42998e8
+  TProjectKit: 0c9c05f888142eb7c48339da5c41f80cfa405afa
 
-PODFILE CHECKSUM: f424eb36ce212632efd7b8a56ed6d5c841ab0d02
+PODFILE CHECKSUM: 360264317a48da0593dfdb521dfd846e70a6bc95
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.7.0.beta.2

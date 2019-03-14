@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import TProjectKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: BaseAppDelegate {
 
-    var window: UIWindow?
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        AppConfig.shared.navigationTitleColor = UIColor.black
+        AppConfig.shared.navigationBarColor = UIColor.red
+        
         return true
     }
 
