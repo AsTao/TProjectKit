@@ -19,37 +19,55 @@ public let isSimulator = true
 #else
 public let isSimulator = false
 #endif
-
+///appdelegate 实例
 public let AppDelegateInstance : BaseAppDelegate = UIApplication.shared.delegate as! BaseAppDelegate
+///持久化文件路径
 public let DocumentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
+///屏幕分辨率
 public let _scale = UIScreen.main.scale
+///屏幕宽度
 public let _SW :CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+///屏幕高度
 public let _SH :CGFloat = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 
+///是否是iPad
 public let isIpad = UIDevice.current.userInterfaceIdiom == .pad
+///是否是iPhone
 public let isIphone = UIDevice.current.userInterfaceIdiom == .phone
+///系统版本号
 public let systemVersion = UIDevice.current.systemVersion
+
 
 public let iPhone4  = (_SH == 480.0)
 public let iPhone5  = (_SH == 568.0)
 public let iPhone6  = (_SH == 667.0)
 public let iPhonePlus = (_SH == 736.0)
+///是否是iPhoneX iPhoneXs iPhoneXr iPhoneXs Max
 public let iPhoneX  = (_SH == 812.0 || _SH == 896.0)
-
+///顶部高度（包括statusBar）
 public let _TOP :CGFloat = (iPhoneX) ? 88 : 64
+///statusBar 高度
 public let _SBARH :CGFloat = (iPhoneX) ? 44 : 20
+///tabbar 高度
 public let _BARH :CGFloat = (iPhoneX) ? 83 : 49
-
+///动态计算长宽比，计算等比放大
 public func _scaleMiddle(_ v: CGFloat) -> CGFloat{return (v * (_SW/375))}
+///字符串fromat
 public func _S(_ format: String, args: CVarArg...) -> String {return String.init(format: format, args)}
 
+///创建文件路径的URL
 public func _FURL(_ str: String) -> URL {return URL.init(fileURLWithPath: str)}
+///创建HTTP URL
 public func _URL(_ str: String) -> URL {if let i = URL.init(string: str) {return i};return URL(string: "a")!}
+///创建一个UIImage
 public func _IMG(_ str: String) -> UIImage? {return UIImage(named: str)}
+///16进制创建UIColor
 public func _RGB(_ rgb: UInt) -> UIColor {return UIColor.init(rgb: rgb)}
+///带透明度的16进制创建UIColor
 public func _ARGB(_ rgb: UInt,a: CGFloat) -> UIColor {return UIColor.init(rgb: rgb, al: a)}
 
+//重载运算符～～，转换可选值为默认值
 postfix operator ~~
 postfix public func ~~(i: Int?) -> Int {return i ?? 0}
 postfix public func ~~(i: Int32?) -> Int32 {return i ?? 0}
@@ -71,10 +89,12 @@ postfix public func ~~(i: Any?) -> Any {
     case let v as String:return v
     default:return ""}
 }
+//返回一个安全的String
 public func safeString(_ s :Any?) -> String{
     if let str = s as? String {return str}
     return ""
 }
+//Number安全转换String
 extension String{
     public var safeInt :Int{return Int(self) ?? 0}
     public var safeInt32 :Int32{return Int32(self) ?? 0}
@@ -86,45 +106,19 @@ extension String{
     public var safeFloat :Float{return Float(self) ?? 0}
     public var safeDouble :Double{return Double(self) ?? 0}
 }
+//string安全转换Number
 extension Int{var str :String{return "\(self)"}}
 extension Int32{var str :String{return "\(self)"}}
 extension Int64{var str :String{return "\(self)"}}
 extension CGFloat{var str :String{return "\(self)"}}
 extension Float{var str :String{return "\(self)"}}
 extension Double{var str :String{return "\(self)"}}
-
+///主线程延迟调用
 public func delay(_ delay: Double,handel : @escaping () -> Void ){
     DispatchQueue.main.asyncAfter(deadline: .now() + delay) {handel()}
 }
 
-@IBDesignable
-extension UIView{
-    @IBInspectable var borderColor: UIColor{
-        set{
-            self.layer.borderColor = newValue.cgColor;
-        }
-        get{
-            return UIColor(cgColor: self.layer.borderColor~~)
-        }
-    }
-    @IBInspectable var cornerRadius: CGFloat{
-        set{
-            self.layer.cornerRadius = newValue;
-        }
-        get{
-            return self.layer.cornerRadius
-        }
-    }
-    @IBInspectable var borderWidth: CGFloat{
-        set{
-            self.layer.borderWidth = newValue;
-        }
-        get{
-            return self.layer.borderWidth
-        }
-    }
-}
-
+///数据解析Json to Model
 public func modelWithJSON<T :Decodable>(_ json :Any) -> T?{
     var object :T?
     do {
@@ -143,6 +137,7 @@ public func modelWithJSON<T :Decodable>(_ json :Any) -> T?{
     }
     return object
 }
+///数据解析Json to [Model]
 public func modelArrayWithClass<T :Decodable>(_ json :[Any]) -> [T]?{
     var object :[T]?
     do {
@@ -155,7 +150,7 @@ public func modelArrayWithClass<T :Decodable>(_ json :[Any]) -> [T]?{
     }
     return object
 }
-
+///数据解析model to Json
 public func modelToJSONString<T :Encodable>(model :T) -> String{
     var object :String = ""
     do {

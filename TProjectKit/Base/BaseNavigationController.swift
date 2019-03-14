@@ -34,11 +34,13 @@ open class BaseNavigationController: UINavigationController {
         self.navigationBar.setBackgroundImage(newImage, for: .top, barMetrics: .default)
     }
     
+    ///进入2级页面隐藏tabbar
     override open func pushViewController(_ viewController: UIViewController, animated: Bool) {
         viewController.hidesBottomBarWhenPushed = viewControllers.count > 0
         super.pushViewController(viewController, animated: animated)
     }
     
+    ///返回时如果是最上层页面显示tabbar
     override open func popViewController(animated: Bool) -> UIViewController? {
         if viewControllers.count == 1 {
             viewControllers[0].hidesBottomBarWhenPushed = false

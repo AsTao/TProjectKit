@@ -9,6 +9,7 @@
 import UIKit
 
 extension Int{
+    ///计时转换 x分x秒
     public var timeDurationString :String {
         if self < 61 {
             return String.init(format: "%d秒", self)
@@ -23,7 +24,7 @@ extension Int{
 
 
 extension Double{
-        
+    ///视频时间格式 xx:xx
     public var videoTimeString :String {
         let hour = self / 60 / 60
         let minute = (self - hour * 60 * 60) / 60
@@ -34,7 +35,7 @@ extension Double{
         }
         return string
     }
-    
+    ///距离当前时间 xx-xx xx:xx
     public var distanceNowTime :String{
         let now :Double  = Date().timeIntervalSince1970
         let offset = Int(now - self)
@@ -52,14 +53,15 @@ extension Double{
         }
     }
     
+    ///时间格式年-月-日
     public var yearMonthDay :String{
        return dateFormat(format: "yyyy-MM-dd")
     }
-    
+    ///时间格式月-日 时:分
     public var transformDateAndTime :String{
         return dateFormat(format: "MM-dd HH:mm")
     }
-    
+    ///组装时间格式 列 yyyy-MM-dd HH:mm:ss
     public func dateFormat(format :String) -> String{
         let formatter = DateFormatter()
         formatter.dateFormat = format

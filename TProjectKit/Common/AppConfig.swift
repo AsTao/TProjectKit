@@ -10,10 +10,6 @@ import UIKit
 
 public class AppConfig: NSObject {
     
-    public static var server_url :String = ""
-    public static var server_usl_url :String = ""
-    public static var server_file_url :String = ""
-  
     public static let shared : AppConfig = {
         let instance = AppConfig()
         return instance
@@ -21,12 +17,11 @@ public class AppConfig: NSObject {
     
 
     public var navigationTitleColor :UIColor = UIColor.white
-    
     public var navigationBarColor :UIColor = UIColor.white
 }
 
 extension AppConfig{
-    
+    ///获取uuid
     public func getUuid() -> String{
         let bundleID = getBundleID()
         if let uuid = self.keychainValueForKey(service: bundleID, key: SwiftKeychainKeyName.UUID.rawValue)  {return uuid}
@@ -36,28 +31,32 @@ extension AppConfig{
         }
         return ""
     }
-    
+    ///获取bundleid
     public func getBundleID() -> String{
         let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName")
         return safeString(name)
     }
+    ///获取版
     public func getVersion() -> String{
         let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
         return safeString(name)
     }
+    ///获取版构建版本
     public func getBundleVersion() -> String{
         let name = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion")
         return safeString(name)
     }
  
-    public enum SwiftKeychainKeyName: String {
+    private enum SwiftKeychainKeyName: String {
         case UUID = "UUID"
     }
+    ///往 keychainValue 里存入值
     public func keychainValueForKey(service :String, key : String) -> String? {
         let item = KeychainPasswordItem(service: service, account: key)
         let value = try? item.readPassword()
         return value
     }
+    ///读取 keychainValue 里的值
     @discardableResult
     public func setKeychainValue(value: String, service :String, forKey: String) -> Bool {
         let item = KeychainPasswordItem(service: service, account: forKey)

@@ -9,5 +9,6 @@ import UIKit
 
 open class BaseAppDelegate: UIResponder,UIApplicationDelegate {
     public var window: UIWindow?
+    ///当前controller
     public weak var currentViewController :UIViewController?
 }

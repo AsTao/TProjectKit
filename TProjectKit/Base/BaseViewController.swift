@@ -16,6 +16,7 @@ open class BaseViewController : UIViewController {
         self.title = " "
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
      
+        ///使用默认样式的返回按钮
         let backBarButtonItem = UIBarButtonItem()
         backBarButtonItem.title = ""
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.libBundleImage("back")
@@ -23,27 +24,21 @@ open class BaseViewController : UIViewController {
         self.navigationItem.backBarButtonItem = backBarButtonItem;
     }
     
-    internal var lifecycleClosures :[((_ show :Bool) -> Void)] = []
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         AppDelegateInstance.currentViewController = self
-        for closure in lifecycleClosures {
-            closure(true)
-        }
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        for closure in lifecycleClosures {
-            closure(false)
-        }
     }
     
     
     
-    
+    ///自定义navigationBar title颜色
     public var navigationTitleColor :UIColor?
+    ///自定义navigationBar title
     public var navtitle :String = ""{
         didSet{
             let w = navtitle.compatibleSizeWithFont(UIFont.systemFont(ofSize: 18), width: _SW-100).width + 20
