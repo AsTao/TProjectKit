@@ -22,7 +22,7 @@ pod 'TProjectKit'
 
 ## Author
 
-EasyfunDev, 236048180@qq.com
+AsTao, 236048180@qq.com
 
 ## License
 

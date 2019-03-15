@@ -26,7 +26,7 @@ extension UIColor {
             alpha: al
         )
     }
-    
+    ///创建纯色图片
     public var createImage :UIImage {
         UIGraphicsBeginImageContext(CGSize(width: 1.0, height: 1.0))
         let context : CGContext! = UIGraphicsGetCurrentContext()

@@ -9,14 +9,14 @@
 import UIKit
 
 extension UIImage {
-    
+    ///以中心点拉升图片
     public func stretchableImage(_ leftCap :CGFloat = 0.5,_ topCap :CGFloat = 0.5) -> UIImage{
         let leftCapWidth = Int(self.size.width * leftCap)
         let topCapHeight = Int(self.size.height * topCap)
         let newImage = self.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
         return newImage;
     }
-    
+    ///旋转图片
     public func rotateImage(angle: Double) -> UIImage? {
         if angle.truncatingRemainder(dividingBy: 360) == 0 { return self }
         let imageRect = CGRect(origin: .zero, size: self.size)
@@ -36,7 +36,7 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return rotatedImage
     }
-    
+    ///裁剪图片大小
     public func resizeImage(resize :CGSize, scale :CGFloat = UIScreen.main.scale)-> UIImage {
         UIGraphicsBeginImageContextWithOptions(resize,false,scale)
         self.draw(in: CGRect(x: 0, y: 0, width: resize.width, height: resize.height))
@@ -44,25 +44,25 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image ?? self
     }
-    
+    ///按百分比裁剪图片
     public func scaleImage(scale :CGFloat) -> UIImage {
         let size = CGSize(width: self.size.width * scale, height: self.size.height * scale)
         return resizeImage(resize: size)
     }
     
-    public static func createPlaceholderImage(size :CGSize) -> UIImage{
-        let rect : CGRect! = CGRect(x: 0.0, y: 0.0, width: size.width*_scale, height: size.height*_scale)
-        UIGraphicsBeginImageContext(rect.size)
-        let context : CGContext! = UIGraphicsGetCurrentContext()
-        context.setFillColor(_RGB(0xe0e0e0).cgColor)
-        context.fill(rect)
-        if let img =  UIImage(named: "jj_placeholder"){
-            img.draw(in: CGRect(x: (rect.size.width-(74*_scale))/2, y: (rect.size.height-(98*_scale))/2, width: 74*_scale, height: 98*_scale))
-        }
-        let theImage : UIImage! = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext()
-        return theImage
-    }
+//    public static func createPlaceholderImage(size :CGSize) -> UIImage{
+//        let rect : CGRect! = CGRect(x: 0.0, y: 0.0, width: size.width*_scale, height: size.height*_scale)
+//        UIGraphicsBeginImageContext(rect.size)
+//        let context : CGContext! = UIGraphicsGetCurrentContext()
+//        context.setFillColor(_RGB(0xe0e0e0).cgColor)
+//        context.fill(rect)
+//        if let img =  UIImage(named: "jj_placeholder"){
+//            img.draw(in: CGRect(x: (rect.size.width-(74*_scale))/2, y: (rect.size.height-(98*_scale))/2, width: 74*_scale, height: 98*_scale))
+//        }
+//        let theImage : UIImage! = UIGraphicsGetImageFromCurrentImageContext();
+//        UIGraphicsEndImageContext()
+//        return theImage
+//    }
     
 
     internal static func libBundleImage(_ named :String) -> UIImage?{
