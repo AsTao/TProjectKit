@@ -1,5 +1,5 @@
 PODS:
-  - TProjectKit (0.0.1)
+  - TProjectKit (0.0.2)
 
 DEPENDENCIES:
   - TProjectKit (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TProjectKit: 0c9c05f888142eb7c48339da5c41f80cfa405afa
+  TProjectKit: f12ad16a59d6b5cfff7c2174addbaf690739a4bf
 
 PODFILE CHECKSUM: 360264317a48da0593dfdb521dfd846e70a6bc95
 
