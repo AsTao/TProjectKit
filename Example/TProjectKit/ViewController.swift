@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var abutton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("aa")
+        
+        abutton.addMask(radius: 10)
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -125,8 +125,8 @@ extension UITextField{
         self.leftViewMode = .always
     }
     
-    public func placeholderLabelColor(_ color :UIColor){
-        self.setValue(color, forKey: "_placeholderLabel.textColor")
+    public func placeholder(text :String, color :UIColor){
+        self.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor:color])
     }
 }
 

@@ -16,7 +16,11 @@ open class BaseViewController : UIViewController {
         self.title = " "
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
      
-        ///使用默认样式的返回按钮
+        
+    }
+    
+    ///使用默认样式的返回按钮
+    func defaultBackBarButtonItem(){
         let backBarButtonItem = UIBarButtonItem()
         backBarButtonItem.title = ""
         self.navigationController?.navigationBar.backIndicatorImage = UIImage.libBundleImage("back")

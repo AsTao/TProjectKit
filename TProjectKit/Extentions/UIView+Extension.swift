@@ -81,8 +81,17 @@ extension UIView {
             frame.size.height = newValue
             self.frame  = frame
         }
-        
     }
+    
+    public func addMask(radius: CGFloat){
+        let maskPaht = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii:CGSize(width: radius, height:radius))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskPaht.cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    
 }
 
 
