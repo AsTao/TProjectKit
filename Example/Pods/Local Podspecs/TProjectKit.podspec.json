@@ -1,7 +1,7 @@
 {
   "name": "TProjectKit",
-  "version": "0.0.2",
-  "summary": "Some handy components",
+  "version": "0.0.4",
+  "summary": "Some handy components,Its all personal preference.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/AsTao/TProjectKit",
   "license": {
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/AsTao/TProjectKit.git",
-    "tag": "0.0.2"
+    "tag": "0.0.4"
   },
   "platforms": {
     "ios": "9.0"
@@ -30,7 +30,7 @@
     "CoreGraphics"
   ],
   "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.2"
+    "SWIFT_VERSION": "5.0"
   },
-  "swift_versions": "4.2"
+  "swift_version": "5.0"
 }
