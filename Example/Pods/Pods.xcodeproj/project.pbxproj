@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0CE918DD462E0946546DCA0A91916DA3 /* BaseAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE389B567D9565A3171436E02E36EED4 /* BaseAppDelegate.swift */; };
 		1BE0B77D0F0B71029E24338739A2BE8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D484CFBFE2A7C64F31ED406CB49E7DDE /* UIKit.framework */; };
 		1D685DE68A8BDEF1CB2C25910969D180 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84819B6677A44D71AF269CADD2E5F1 /* Convenience.swift */; };
 		209969F880DD05921FEC61996982703A /* Pods-TProjectKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5798042464784C37439B24CA1B0B17 /* Pods-TProjectKit_Example-dummy.m */; };
@@ -83,7 +82,6 @@
 		C7907F9655EFB5DB43F19CEDC854109D /* TProjectKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TProjectKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D484CFBFE2A7C64F31ED406CB49E7DDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D540D94D91B3D4238C8DA67D6490FC0D /* TProjectKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TProjectKit-umbrella.h"; sourceTree = "<group>"; };
-		EE389B567D9565A3171436E02E36EED4 /* BaseAppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseAppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +239,6 @@
 		D5DC4579CC6E6FD686B509801753B6C9 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				EE389B567D9565A3171436E02E36EED4 /* BaseAppDelegate.swift */,
 				37AD9A66DD45C78A74F59A804FA8BCE4 /* BaseNavigationController.swift */,
 				4015BC7D3CA353CE66634137577885B3 /* BaseNiblessView.swift */,
 				1A1D7CD9FB2A83DF89D5165ECB5CD3D5 /* BaseViewController.swift */,
@@ -375,7 +372,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E036687E9BEDC4C007D059930F991EA /* AppConfig.swift in Sources */,
-				0CE918DD462E0946546DCA0A91916DA3 /* BaseAppDelegate.swift in Sources */,
 				B2F6373DDA0590CA5B06AC899F71605E /* BaseNavigationController.swift in Sources */,
 				28F5BF7FFCA83191F636ED303703D21F /* BaseNiblessView.swift in Sources */,
 				6FFEB4F79E428CCF1B52B46EB7CFC01C /* BaseViewController.swift in Sources */,

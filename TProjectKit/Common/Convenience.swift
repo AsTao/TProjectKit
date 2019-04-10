@@ -19,8 +19,6 @@ public let isSimulator = true
 #else
 public let isSimulator = false
 #endif
-///appdelegate 实例
-public let AppDelegateInstance : BaseAppDelegate = UIApplication.shared.delegate as! BaseAppDelegate
 ///持久化文件路径
 public let DocumentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
 
@@ -116,6 +114,23 @@ extension Double{var str :String{return "\(self)"}}
 ///主线程延迟调用
 public func delay(_ delay: Double,handel : @escaping () -> Void ){
     DispatchQueue.main.asyncAfter(deadline: .now() + delay) {handel()}
+}
+
+///appdelegate 实例
+
+public func CurrentViewContrller() -> UIViewController?{
+    if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController{
+        func findViewController(viewController :UIViewController) -> UIViewController{
+            if let nav = viewController as? UINavigationController,let vc = nav.visibleViewController{
+                return findViewController(viewController: vc)
+            }else if let tabbar = viewController as? UITabBarController,let vc = tabbar.selectedViewController{
+                return findViewController(viewController: vc)
+            }
+            return viewController
+        }
+        return findViewController(viewController: rootViewController)
+    }
+    return nil
 }
 
 ///数据解析Json to Model

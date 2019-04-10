@@ -17,6 +17,7 @@ open class BaseViewController : UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
      
         
+        print(CurrentViewContrller())
     }
     
     ///使用默认样式的返回按钮
@@ -31,7 +32,6 @@ open class BaseViewController : UIViewController {
     
     override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        AppDelegateInstance.currentViewController = self
     }
     
     override open func viewWillDisappear(_ animated: Bool) {

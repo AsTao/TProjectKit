@@ -66,7 +66,7 @@ extension UIImage {
     
 
     internal static func libBundleImage(_ named :String) -> UIImage?{
-        guard let bundle = Bundle(for: BaseAppDelegate.self).path(forResource: "SwiftResource", ofType: "bundle") else {return nil}
+        guard let bundle = Bundle(for: BaseViewController.self).path(forResource: "SwiftResource", ofType: "bundle") else {return nil}
         guard let resource = Bundle(path: bundle) else {return nil}
         let fix = UIScreen.main.scale > 2 ?  "@3x" : "@2x"
         if let file = resource.path(forResource: "\(named)\(fix)", ofType: "png") {

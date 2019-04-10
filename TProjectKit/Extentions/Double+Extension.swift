@@ -26,12 +26,12 @@ extension Int{
 extension Double{
     ///视频时间格式 xx:xx
     public var videoTimeString :String {
-        let hour = self / 60 / 60
-        let minute = (self - hour * 60 * 60) / 60
-        let second = self.truncatingRemainder(dividingBy: 60)
-        var string = String.init(format: "%02d:%02d", minute, second)
+        let hour = Int(self / 60 / 60)
+        let minute = Int((self - Double(hour) * 60 * 60) / 60)
+        let second = Int(self.truncatingRemainder(dividingBy: 60))
+        var string = String(format: "%02d:%02d", minute, second)
         if hour > 0 {
-            string = String.init(format: "%02d", hour) + string
+            string = String(format: "%02d", Int(hour)) + string
         }
         return string
     }
