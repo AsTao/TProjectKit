@@ -21,9 +21,9 @@ open class BaseNavigationController: UINavigationController {
     }
     
     open lazy var customNavigationBar: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: -_SBARH, width: _SW, height: _TOP))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: _SW, height: _TOP))
         view.isUserInteractionEnabled = false
-        self.navigationBar.insertSubview(view, at: 0)
+        self.navigationBar.subviews.first?.addSubview(view)
         return view
     }()
     
