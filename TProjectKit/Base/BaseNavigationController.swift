@@ -12,18 +12,17 @@ open class BaseNavigationController: UINavigationController {
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationBar.tintColor = AppConfig.shared.navigationTitleColor
-        self.navigationBar.barTintColor = AppConfig.shared.navigationBarColor
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:AppConfig.shared.navigationTitleColor]
-        //        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        //        self.navigationBar.shadowImage = UIImage()
+        
+        navigationBar.tintColor = AppConfig.shared.navigationTitleColor
+        navigationBar.barTintColor = AppConfig.shared.navigationBarColor
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:AppConfig.shared.navigationTitleColor]
+        
     }
     
     open lazy var customNavigationBar: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: _SW, height: _TOP))
         view.isUserInteractionEnabled = false
-        self.navigationBar.subviews.first?.addSubview(view)
+        navigationBar.subviews.first?.insertSubview(view, at: 0)
         return view
     }()
     
@@ -31,7 +30,7 @@ open class BaseNavigationController: UINavigationController {
         let leftCapWidth = Int(image.size.width * 0.5)
         let topCapHeight = Int(image.size.height * 0.5)
         let newImage = image.stretchableImage(withLeftCapWidth: leftCapWidth, topCapHeight: topCapHeight)
-        self.navigationBar.setBackgroundImage(newImage, for: .top, barMetrics: .default)
+        navigationBar.setBackgroundImage(newImage, for: .top, barMetrics: .default)
     }
     
     ///进入2级页面隐藏tabbar
