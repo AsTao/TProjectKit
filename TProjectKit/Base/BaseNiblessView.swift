@@ -17,7 +17,16 @@ open class BaseNiblessView: UIView {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("loading this view from a nib is unsupported")
     }
+}
+open class BaseNiblessControl: UIControl {
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
+    @available(*, unavailable,message: "loading this view from a nib is unsupported")
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError("loading this view from a nib is unsupported")
+    }
 }
 open class BaseNiblessCollectionView: UICollectionView {
     public override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {

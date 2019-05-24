@@ -36,7 +36,6 @@ public let isIphone = UIDevice.current.userInterfaceIdiom == .phone
 ///系统版本号
 public let systemVersion = UIDevice.current.systemVersion
 
-
 public let iPhone4  = (_SH == 480.0)
 public let iPhone5  = (_SH == 568.0)
 public let iPhone6  = (_SH == 667.0)
@@ -50,14 +49,21 @@ public let _SBARH :CGFloat = (iPhoneX) ? 44 : 20
 ///tabbar 高度
 public let _BARH :CGFloat = (iPhoneX) ? 83 : 49
 ///动态计算长宽比，计算等比放大
-public func _scaleMiddle(_ v: CGFloat) -> CGFloat{return (v * (_SW/375))}
+public func _ScaleMiddle(_ v: CGFloat) -> CGFloat{return CGFloat(Int(v * (_SW/375)))}
 ///字符串fromat
 public func _S(_ format: String, args: CVarArg...) -> String {return String.init(format: format, args)}
-
+///创建Rect
+public func _Rect(_ x: CGFloat = 0, _ y: CGFloat = 0,_ w :CGFloat, _ h :CGFloat) -> CGRect {
+    return CGRect(x: x, y: y, width: w, height: h)
+}
+///创建Size
+public func _Size(_ w :CGFloat, _ h :CGFloat) -> CGSize {return CGSize(width: w, height: h)}
+///创建Point
+public func _Point(_ x: CGFloat, _ y: CGFloat ) -> CGPoint {return CGPoint(x: x, y: y)}
 ///创建文件路径的URL
-public func _FURL(_ str: String) -> URL {return URL.init(fileURLWithPath: str)}
+public func _FURL(_ str: String) -> URL {return URL(fileURLWithPath: str)}
 ///创建HTTP URL
-public func _URL(_ str: String) -> URL {if let i = URL.init(string: str) {return i};return URL(string: "a")!}
+public func _URL(_ str: String) -> URL {return URL(string: str) ?? URL(fileURLWithPath: "")}
 ///创建一个UIImage
 public func _IMG(_ str: String) -> UIImage? {return UIImage(named: str)}
 ///16进制创建UIColor
