@@ -14,8 +14,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         
-        abutton.addMask(radius: 10)
+  
         
     }
 

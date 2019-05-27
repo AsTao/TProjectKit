@@ -20,7 +20,7 @@ open class BaseViewController : UIViewController {
             automaticallyAdjustsScrollViewInsets = false
             return
         }
-
+        
     }
     
     override open func viewWillAppear(_ animated: Bool) {

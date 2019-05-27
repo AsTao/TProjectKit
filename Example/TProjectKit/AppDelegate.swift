@@ -17,8 +17,11 @@ class AppDelegate: UIResponder,UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //UIButton.titlebu
+        
         AppConfig.shared.navigationTitleColor = UIColor.black
         AppConfig.shared.navigationBarColor = UIColor.red
+        
         
         return true
     }

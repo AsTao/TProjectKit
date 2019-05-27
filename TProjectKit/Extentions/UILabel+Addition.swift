@@ -9,7 +9,7 @@ import UIKit
 
 
 extension UILabel{
-    class func label(frame :CGRect,text :String?,
+    public class func label(frame :CGRect,text :String?,
                      textColor :UIColor,
                      fontSize :CGFloat,
                      fontWeight :UIFont.Weight = .regular,

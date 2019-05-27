@@ -8,12 +8,12 @@
 import UIKit
 
 extension UIButton{
-    class func titleButton(frame :CGRect = .zero,
-                           title :String = "",
-                           titleColor :UIColor = .black,
-                           backgroundColor :UIColor = .white,
-                           target :Any? = nil,
-                           action :Selector) -> UIButton{
+    public class func titleButton(frame :CGRect = .zero,
+                                  title :String = "",
+                                  titleColor :UIColor = .black,
+                                  backgroundColor :UIColor = .white,
+                                  target :Any? = nil,
+                                  action :Selector) -> UIButton{
         let b = UIButton(frame:frame)
         b.setTitle(title, for: .normal)
         b.setTitleColor(titleColor, for: .normal)
@@ -23,10 +23,10 @@ extension UIButton{
         }
         return b
     }
-    class func imageButton(frame :CGRect = .zero,
-                           image :String = "",
-                           target :Any? = nil,
-                           action :Selector) -> UIButton{
+    public class func imageButton(frame :CGRect = .zero,
+                                  image :String = "",
+                                  target :Any? = nil,
+                                  action :Selector) -> UIButton{
         let b = UIButton(frame:frame)
         b.setImage(UIImage(named: image), for: .normal)
         if let t = target {
@@ -34,10 +34,10 @@ extension UIButton{
         }
         return b
     }
-    class func backgroundImageButton(frame :CGRect = .zero,
-                                     image :String = "",
-                                     target :Any? = nil,
-                                     action :Selector) -> UIButton{
+    public class func backgroundImageButton(frame :CGRect = .zero,
+                                            image :String = "",
+                                            target :Any? = nil,
+                                            action :Selector) -> UIButton{
         let b = UIButton(frame:frame)
         b.setBackgroundImage(UIImage(named: image), for: .normal)
         if let t = target {
