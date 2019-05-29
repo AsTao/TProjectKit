@@ -41,51 +41,14 @@ extension String {
         guard let url = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {return self}
         return url
     }
-    
-//    public var md5 :String{
-//        let str = self.cString(using: String.Encoding.utf8)
-//        let strLen = CUnsignedInt(self.lengthOfBytes(using: String.Encoding.utf8))
-//        let digestLen = Int(CC_MD5_DIGEST_LENGTH)
-//        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: digestLen)
-//        CC_MD5(str!, strLen, result)
-//        let hash = NSMutableString()
-//        for i in 0 ..< digestLen {
-//            hash.appendFormat("%02x", result[i])
-//        }
-//        result.deinitialize(count: digestLen)
-//        return String(format: hash as String)
-//    }
-    
-    
+
     ///计算字符串大小
-    public func compatibleSizeWithFont( _ font: UIFont, width: CGFloat) -> CGSize{
-        
+    public func calculateSize(font: UIFont, width: CGFloat = CGFloat(MAXFLOAT)) -> CGSize{
         
         let rect = self.boundingRect(with: CGSize(width: width,height: CGFloat(MAXFLOAT)), options:[.usesLineFragmentOrigin,.usesFontLeading],
                                      attributes:[NSAttributedString.Key.font: font], context: nil);
         
         return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
-    }
-    
-    
-    public func compatibleSizeWithFont( _ font: UIFont,_ width: CGFloat,_ lineSpacing :CGFloat) -> CGSize{
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .justified
-        paragraphStyle.lineSpacing = lineSpacing
-        paragraphStyle.lineBreakMode = .byCharWrapping
-        let rect = self.boundingRect(with: CGSize(width: width,height: CGFloat(MAXFLOAT)),
-                                     options: [ NSStringDrawingOptions.truncatesLastVisibleLine , NSStringDrawingOptions.usesLineFragmentOrigin , NSStringDrawingOptions.usesFontLeading],
-                                     attributes:[NSAttributedString.Key.font: font,NSAttributedString.Key.paragraphStyle: paragraphStyle], context: nil)
-        return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
-    }
-    
-    public func compatibleSizeFont( _ font: UIFont, width: CGFloat) -> CGSize{
-        
-        let rect = self.boundingRect(with: CGSize(width: width,height: CGFloat(MAXFLOAT)), options: [ NSStringDrawingOptions.truncatesLastVisibleLine , NSStringDrawingOptions.usesLineFragmentOrigin , NSStringDrawingOptions.usesFontLeading], attributes:[NSAttributedString.Key.font: font,
-                                                                                                                                                                                                                                                             NSAttributedString.Key.paragraphStyle: NSParagraphStyle.default], context: nil)
-        
-        return CGSize(width: ceil(rect.size.width), height: ceil(rect.size.height))
-        
     }
     
     ///去空格
@@ -94,7 +57,6 @@ extension String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
       
-    
 }
 
 
