@@ -45,7 +45,7 @@ public class ToastView: UIView {
     
     var content :String = ""{
         didSet{
-            let size = content.compatibleSizeFont(titleLabel.font, width: _SW - 40)
+            let size = content.calculateSize(font: titleLabel.font, width: _SW - 40)
             if UIDevice.current.orientation.isLandscape {
                 let realHeight = min((size.height + 16), (_SW - 80))
                 self.frame = CGRect(x: 0, y: 0, width:  (size.width + 16), height: (size.height+16))
