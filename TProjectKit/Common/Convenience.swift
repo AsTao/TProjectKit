@@ -70,6 +70,12 @@ public func _IMG(_ str: String) -> UIImage? {return UIImage(named: str)}
 public func _RGB(_ rgb: UInt) -> UIColor {return UIColor.init(rgb: rgb)}
 ///带透明度的16进制创建UIColor
 public func _ARGB(_ rgb: UInt,a: CGFloat) -> UIColor {return UIColor.init(rgb: rgb, al: a)}
+///系统字体
+public func _Font(_ size :CGFloat) -> UIFont {return UIFont.systemFont(ofSize: size)}
+///系统中字体
+public func _MFont(_ size :CGFloat) -> UIFont {return UIFont.systemFont(ofSize: size, weight: .medium)}
+///系统粗字体
+public func _BFont(_ size :CGFloat) -> UIFont {return UIFont.systemFont(ofSize: size, weight: .bold)}
 
 //重载运算符～～，转换可选值为默认值
 postfix operator ~~
