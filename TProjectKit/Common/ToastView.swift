@@ -8,6 +8,7 @@
 import UIKit
 
 public func ToastViewMessage(_ message :String){
+    CurrentViewContrller()?.view.endEditing(true)
     ToastView.shared.makeToast(text: message)
 }
 public func ToastViewEditMessage(_ message :String){
