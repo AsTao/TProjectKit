@@ -42,9 +42,9 @@ extension Double{
         if offset < 60 {
             return "1m ago"
         }else if offset < 3600{
-            return _S("%dm ago", args: offset/60)
+            return String(format: "%dm ago", offset/60)
         }else if offset < 86400{
-            return _S("%dh ago", args: offset/3600)
+            return String(format: "%dh ago", offset/3600)
         }else{
             let formatter = DateFormatter()
             formatter.dateFormat = "MM-dd HH:mm"

@@ -131,7 +131,7 @@ public func delay(_ delay: Double,handel : @escaping () -> Void ){
 ///appdelegate 实例
 
 public func CurrentViewContrller() -> UIViewController?{
-    if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController{
+    if let rootViewController = UIApplication.shared.delegate?.window??.rootViewController?.presentedViewController{
         func findViewController(viewController :UIViewController) -> UIViewController{
             if let nav = viewController as? UINavigationController,let vc = nav.visibleViewController{
                 return findViewController(viewController: vc)
